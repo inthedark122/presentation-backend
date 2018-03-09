@@ -10,7 +10,7 @@ from logging.config import fileConfig
 import logging
 import re
 
-from content.models import ProjectModel, SlideModel
+from app.content.models import ProjectModel, SlideModel
 
 USE_TWOPHASE = False
 

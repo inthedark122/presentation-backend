@@ -2,7 +2,6 @@ import psycopg2
 from sqlalchemy import create_engine
 
 from .main import pg_dsn
-from .models import Base
 from .settings import Settings
 
 
@@ -41,8 +40,4 @@ def prepare_database(delete_existing: bool) -> bool:
     cur.close()
     conn.close()
 
-    engine = create_engine(pg_dsn(settings))
-    print('creating tables from model definition...')
-    Base.metadata.create_all(engine)
-    engine.dispose()
     return True
