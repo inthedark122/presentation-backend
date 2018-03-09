@@ -10,7 +10,7 @@ Base = declarative_base()
 
 class ProjectModel(Base):
     __tablename__ = 'content_project'
-    id = Column(Integer, Sequence('msg_id_seq'), primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(255), nullable=False)
     title = Column(String(255))
 
