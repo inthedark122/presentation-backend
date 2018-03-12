@@ -1,7 +1,7 @@
 from .project import ProjectModel, sa_project
-from .slide import SlideModel
+from .slide import SlideModel, sa_slide
 
 __all__ = [
     "ProjectModel", "sa_project",
-    "SlideModel",
+    "SlideModel", "sa_slide",
 ]

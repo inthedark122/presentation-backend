@@ -4,6 +4,7 @@
 
 from sqlalchemy import Column, DateTime, Integer, Sequence, String, Text, func
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -13,6 +14,7 @@ class ProjectModel(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(255), nullable=False)
     title = Column(String(255))
+    slide = relationship("SlideModel")
 
 
 sa_project = ProjectModel.__table__

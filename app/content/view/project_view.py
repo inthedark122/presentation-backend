@@ -44,4 +44,4 @@ async def delete_view(request):
     async with request.app['db'].acquire() as conn:
         await conn.execute(sa_project.delete().where(sa_project.c.id == request.match_info['project_id']))
 
-        return web.json_response({success: True})
+        return web.json_response({"success": True})
