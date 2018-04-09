@@ -10,7 +10,7 @@ slide_routes = web.RouteTableDef()
 async def list_get_view(request):
     async with request.app['db'].acquire() as conn:
         project_id = request.match_info['project_id']
-        query = sa_slide.select().where(sa_slide.c.project_id==project_id).order_by(sa_slide.c.id.desc())
+        query = sa_slide.select().where(sa_slide.c.project_id==project_id).order_by(sa_slide.c.id.asc())
         result = await conn.execute(query)
         slides = await result.fetchall()
 
